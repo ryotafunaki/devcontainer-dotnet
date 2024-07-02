@@ -24,7 +24,7 @@
         "ms-dotnettools.dotnet-interactive-vscode",
         "ms-toolsai.jupyter-renderers",
         "redhat.vscode-xml",
-        "redhat.vscode-yaml",
+        "redhat.vscode-yaml"
       ]
     }
   }
