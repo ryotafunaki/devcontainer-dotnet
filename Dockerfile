@@ -15,5 +15,8 @@ RUN echo "$USER_NAME ALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/${USER_NAME}
 RUN sudo apt clean && \
     sudo rm -rf /var/lib/apt/lists/*
 
+# Update the .NET workload
+RUN dotnet workload update
+
 # Switch to the non-root user
 USER ${USER_NAME}
