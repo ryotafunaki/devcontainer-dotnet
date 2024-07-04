@@ -7,7 +7,7 @@ on:
     branches:
       - "sdk-*"
     paths:
-      - ".devcontainer/Dockerfile"
+      - "Dockerfile"
       - ".github/workflows/publish.yml"
 jobs:
   build:
