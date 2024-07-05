@@ -1,6 +1,6 @@
 # Copyright (c) 2024 RFull Development
 # This source code is managed under the MIT license. See LICENSE in the project root.
-FROM mcr.microsoft.com/dotnet/sdk:8.0
+FROM ryotafunaki/devcontainer-dotnet:sdk-8.0
 
 # Install dependencies
 RUN apt update && \
@@ -16,7 +16,9 @@ RUN sudo apt clean && \
     sudo rm -rf /var/lib/apt/lists/*
 
 # Update the .NET workload
-RUN dotnet workload update
+RUN dotnet workload update && \
+    dotnet workload install aspire
 
-# Switch to the non-root user
-USER ${USER_NAME}
+    # Switch to the non-root user
+# Run as the root user until a non-root user can run the .NET Aspire project.
+# USER ${USER_NAME}
