@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "sdk/*/base"
+      - "sdk/**/*"
     paths:
       - "Dockerfile"
       - ".github/workflows/publish.yml"
