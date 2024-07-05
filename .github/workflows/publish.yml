@@ -21,7 +21,7 @@ jobs:
       - name: Generate tag
         id: tag-generator
         run: |
-          echo "TAG=$(sed -e 's/\//-/g' <<< "${{ github.ref_name }}) >> "$GITHUB_OUTPUT"
+          echo "TAG=$(echo \"${{ github.ref_name }}\" | sed -e 's/\/base//g' | sed -e 's/\//-/g')" >> "$GITHUB_OUTPUT"
       - name: Docker login
         uses: docker/login-action@v3
         with:
