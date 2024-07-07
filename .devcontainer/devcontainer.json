@@ -3,7 +3,6 @@
 {
   "name": ".NET Dev Container",
   "image": "ryotafunaki/devcontainer-dotnet:sdk-8.0",
-  "remoteUser": "developer",
   "customizations": {
     "vscode": {
       "extensions": [
