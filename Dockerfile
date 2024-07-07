@@ -2,8 +2,5 @@
 # This source code is managed under the MIT license. See LICENSE in the project root.
 FROM ryotafunaki/devcontainer-dotnet:sdk-8.0
 
-# Run as the root user until a non-root user can run the .NET Aspire project.
-# Update the .NET workload
-USER root
-RUN dotnet workload update && \
-    dotnet workload install aspire
+RUN sudo dotnet workload update && \
+    sudo dotnet workload install aspire
