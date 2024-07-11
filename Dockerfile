@@ -17,6 +17,13 @@ RUN apt clean && \
 
 # Switch to the non-root user
 USER ${USER_NAME}
+WORKDIR /home/${USER_NAME}
 
 # Install development tools
-RUN dotnet tool install --global Microsoft.OpenApi.Kiota
+COPY --chown=${USER_NAME}:${USER_NAME} ./shells/ ./shells/
+RUN cd ./shells && \
+    chmod +x *.sh && \
+    ./install_kiota.sh && \
+    cat include_bashrc.sh >> ~/.bashrc && \
+    cd ..
+RUN rm -rf ./shells
