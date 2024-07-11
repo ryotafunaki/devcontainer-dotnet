@@ -9,4 +9,4 @@ fi
 
 # Install development tools
 sudo dotnet workload update
-dotnet tool install --global Microsoft.OpenApi.Kiota
+sudo dotnet workload install aspire
