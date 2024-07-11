@@ -17,3 +17,6 @@ RUN apt clean && \
 
 # Switch to the non-root user
 USER ${USER_NAME}
+
+# Install development tools
+RUN dotnet tool install --global Microsoft.OpenApi.Kiota
