@@ -16,7 +16,3 @@ if [ -d "$HOME/.dotnet/tools" ]; then
     export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 EOT
-
-# Clean up
-sudo apt clean
-sudo rm -rf /var/lib/apt/lists/*
