@@ -8,15 +8,6 @@ for file in $TARGET_FILES; do
     bash "$file"
 done
 
-# Add path to the .bashrc file
-cat << EOT >> ~/.bashrc
-
-# Add .NET tools to the PATH
-if [ -d "$HOME/.dotnet/tools" ]; then
-    export PATH="$PATH:$HOME/.dotnet/tools"
-fi
-EOT
-
 # Clean up
-sudo apt clean
-sudo rm -rf /var/lib/apt/lists/*
+apt clean
+rm -rf /var/lib/apt/lists/*
