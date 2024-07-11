@@ -22,8 +22,7 @@ WORKDIR /home/${USER_NAME}
 # Install development tools
 COPY --chown=${USER_NAME}:${USER_NAME} ./shells/ ./shells/
 RUN cd ./shells && \
-    chmod +x *.sh && \
-    ./install_kiota.sh && \
-    cat include_bashrc.sh >> ~/.bashrc && \
+    chmod +x install.sh && \
+    ./install.sh && \
     cd ..
 RUN rm -rf ./shells
