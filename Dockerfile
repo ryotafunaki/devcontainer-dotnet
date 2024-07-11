@@ -10,3 +10,7 @@ RUN cd ./shells && \
     ./install.sh && \
     cd ..
 RUN rm -rf ./shells
+
+# Clean up
+RUN sudo apt clean && \
+    sudo rm -rf /var/lib/apt/lists/*
