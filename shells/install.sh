@@ -18,5 +18,5 @@ fi
 EOT
 
 # Clean up
-sudo apt clean && \
+sudo apt clean
 sudo rm -rf /var/lib/apt/lists/*
