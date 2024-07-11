@@ -3,6 +3,7 @@
 FROM ryotafunaki/devcontainer-dotnet:sdk-8.0
 
 # Install development tools
+ARG USER_NAME=developer
 COPY --chown=${USER_NAME}:${USER_NAME} ./shells/ ./shells/
 RUN cd ./shells && \
     chmod +x install.sh && \
