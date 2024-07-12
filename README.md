@@ -6,10 +6,10 @@ This repository is a Dev Container for .NET.
 
 | Type | Summary |
 | --- | --- |
-| Base image and tags | ryotafunaki/devcontainer-dotnet:sdk-8.0 |
+| Base image and tags | mcr.microsoft.com/dotnet/sdk:*tag* |
 | Target platform | linux/x64, linux/arm64 |
 | Container registry's URL | https://hub.docker.com/r/ryotafunaki/devcontainer-dotnet/ |
-| Installed packages | Kiota, .NET Aspire |
+| Installed packages | Kiota |
 
 ## How to use
 
