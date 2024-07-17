@@ -10,3 +10,4 @@ if [[ "$ARCH" != "amd64" ]]; then
 fi
 
 dotnet workload update
+exit 0
