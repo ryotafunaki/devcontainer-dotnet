@@ -11,3 +11,4 @@ fi
 
 dotnet workload update
 dotnet workload install aspire
+exit 0
