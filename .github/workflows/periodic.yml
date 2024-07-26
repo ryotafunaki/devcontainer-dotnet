@@ -14,4 +14,4 @@ jobs:
     steps:
       - name: Trigger builds on Docker Hub
         run: |
-          curl -X POST ${{ secrets.DOCKER_HUB_TRIGGER_URL }}
+          curl -X POST ${{ secrets.DOCKER_HUB_TRIGGER_URL }} -o /dev/null
