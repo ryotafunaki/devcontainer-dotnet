@@ -24,3 +24,14 @@ RUN cd ./shells && \
     ./install.sh && \
     cd ..
 RUN rm -rf ./shells
+
+USER root
+
+# Clean up
+RUN apt clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN rm -rf /tmp/* && \
+    rm -rf /var/tmp/*
+
+USER ${USER_NAME}
+WORKDIR /home/${USER_NAME}
