@@ -10,4 +10,5 @@ if [[ "$ARCH" != "amd64" ]]; then
 fi
 
 dotnet workload update
+dotnet workload install aspire
 exit 0

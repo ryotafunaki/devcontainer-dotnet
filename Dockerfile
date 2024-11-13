@@ -1,24 +1,19 @@
 # Copyright (c) 2024 RFull Development
 # This source code is managed under the MIT license. See LICENSE in the project root.
-FROM mcr.microsoft.com/dotnet/sdk:9.0
-
-# Install dependencies
-RUN apt update && \
-    apt install -y sudo git gnupg2 vim curl lsb-release locales
+FROM ryotafunaki/devcontainer-dotnet:sdk-9.0
 
 # Install development tools for root
-ARG USER_NAME=developer
-ARG LOCALE=en_US.UTF-8
+USER root
+WORKDIR /root
 COPY ./shells/root/ ./shells/
 RUN cd ./shells && \
     chmod +x *.sh && \
-    ./create_user.sh ${USER_NAME} && \
-    ./setup_locale.sh ${LOCALE} && \
     ./install.sh && \
     cd ..
 RUN rm -rf ./shells
 
 # Switch to the non-root user
+ARG USER_NAME=developer
 USER ${USER_NAME}
 WORKDIR /home/${USER_NAME}
 
